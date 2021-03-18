@@ -44,6 +44,7 @@
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
+                    <th>Index</th>
                     <th>Category name</th>
                     <th>Slug</th>
                     <th>Edit</th>
@@ -55,10 +56,22 @@
                     @foreach ($categories as $category)
                         
                             <tr>
+                              <td>{{$loop-> index+1}}</td>
                         <td>{{$category->name}}</td>
                         <td>{{$category->slug}} </td>
-                        <td>Edit</td>
-                        <td>Delete</td>
+                        <td><a href="{{route('category.edit',$category->id)}}">Edit</a></td>
+                        <td><form id="delete-form-{{$category->id}}"style="display:none" method="post"action="{{ route('category.destroy',$category->id)}}"> 
+                        @csrf  
+                        {{method_field('DELETE')}}
+                        </form>
+                          <a href=""  onclick="if(confirm('Are you Sure?'))
+                          { 
+                            event.preventDefault();
+                            document.getElementById('delete-form-{{$category->id}}').submit();
+                          }
+                          else
+                          {event.preventDefault();
+                            }">Delete</a></td>
                     
                              </tr>
                         
@@ -68,6 +81,7 @@
                   </tbody>
                   <tfoot>
                   <tr>
+                    <th>Index</th>
                     <th>Category name</th>
                     <th>Slug</th>
                     <th>Edit</th>
