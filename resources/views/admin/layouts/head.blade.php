@@ -25,3 +25,5 @@
 
 @section('head-for-table')
 @show
+@section('head-for-edit')
+@show

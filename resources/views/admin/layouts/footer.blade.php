@@ -70,4 +70,7 @@
 
 @section('footer-for-table')
 @show
+
+@section('footer-for-edit')
+@show
   </footer>
