@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Model\user\post;
+use App\Models\Model\user\post_tag;
+use App\Models\Model\user\category_post;
 use App\Models\Model\user\category;
 use App\Models\Model\user\tag;
 use App\Http\Controllers\Controller;
@@ -83,7 +85,7 @@ class PostController extends Controller
     public function edit($id)
     {
         
-        $post= post::where('id',$id)->first();
+        $post= post::with('tags','categories')->where('id',$id)->first();
         $tags= tag::all();
         $categories= category::all();
         return view('admin.post.edit',compact('tags','categories','post'));
@@ -132,6 +134,8 @@ class PostController extends Controller
     public function destroy($id)
     {
         post::where('id',$id)->delete();
+        post_tag::where('post_id',$id)->delete();
+        category_post::where('post_id',$id)->delete();
         return redirect()->back();
     }
 }

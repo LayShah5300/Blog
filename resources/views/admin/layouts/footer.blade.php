@@ -6,19 +6,20 @@
     </div>
     
     <!-- jQuery -->
-<script src="{{asset('admin/plugins/jquery/jquery.min.js')}}"></script>
+<script src="{{asset('/admin/plugins/jquery/jquery.min.js')}}"></script>
 <!-- jQuery UI 1.11.4 -->
 <script src="{{asset('admin/plugins/jquery-ui/jquery-ui.min.js')}}"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
   $.widget.bridge('uibutton', $.ui.button)
+ // $('#toggle-button').on('expanded.lte.controlsidebar', handleExpandedEvent)
 </script>
 <!-- Bootstrap 4 -->
 <script src="{{asset('admin/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <!-- ChartJS -->
 <script src="{{asset('admin/plugins/chart.js/Chart.min.js')}}"></script>
 <!-- Sparkline -->
-<script src="{{asset('admin/plugins/sparklines/sparkline.js')}}')}}"></script>
+<script src="{{asset('admin/plugins/sparklines/sparkline.js')}}"></script>
 <!-- JQVMap -->
 <script src="{{asset('admin/plugins/jqvmap/jquery.vmap.min.js')}}"></script>
 <script src="{{asset('admin/plugins/jqvmap/maps/jquery.vmap.usa.js')}}"></script>
@@ -37,23 +38,22 @@
 <script src="{{asset('admin/dist/js/adminlte.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('admin/dist/js/demo.js')}}"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="{{asset('admin/dist/js/pages/dashboard.js')}}"></script>
+
 <!-- jQuery -->
-<script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
+<script src="{{asset('admin/plugins/jquery/jquery.min.js')}}"></script>
 <!-- Bootstrap 4 -->
-<script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{asset('admin/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <!-- AdminLTE App -->
-<script src="{{asset('dist/js/adminlte.min.js')}}"></script>
+<script src="{{asset('admin/dist/js/adminlte.min.js')}}"></script>
 <!-- Summernote -->
-<script src="{{asset('plugins/summernote/summernote-bs4.min.js')}}"></script>
+<script src="{{asset('admin/plugins/summernote/summernote-bs4.min.js')}}"></script>
 <!-- CodeMirror -->
-<script src="{{asset('plugins/codemirror/codemirror.js')}}"></script>
-<script src="{{asset('plugins/codemirror/mode/css/css.js')}}"></script>
-<script src="{{asset('plugins/codemirror/mode/xml/xml.js')}}')}}"></script>
-<script src="{{asset('plugins/codemirror/mode/htmlmixed/htmlmixed.js')}}"></script>
+<script src="{{asset('admin/plugins/codemirror/codemirror.js')}}"></script>
+<script src="{{asset('admin/plugins/codemirror/mode/css/css.js')}}"></script>
+<script src="{{asset('admin/plugins/codemirror/mode/xml/xml.js')}}"></script>
+<script src="{{asset('admin/plugins/codemirror/mode/htmlmixed/htmlmixed.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="{{asset('dist/js/demo.js')}}"></script>
+<script src="{{asset('admin/dist/js/demo.js')}}"></script>
 <!-- Page specific script -->
 <script>
   $(function () {

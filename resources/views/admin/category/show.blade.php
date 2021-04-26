@@ -25,7 +25,7 @@
     <section class="content">
 
       <!-- Default box -->
-      <div class="card">
+      <div class="card" >
         <div class="card-header">
           <h3 class="card-title">Categories</h3>
              <a class="col-lg-9" href="{{route('category.create')}}">Add New</a>

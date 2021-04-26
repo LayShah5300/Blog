@@ -9,10 +9,10 @@ class post extends Model
 {
     use HasFactory;
     public function tags(){
-        return $this->belongsToMany('App\Models\Model\user\tag','post_tags');
+        return $this->belongsToMany('App\Models\Model\user\tag','post_tags')->withTimestamps();
     } 
 
     public function categories(){
-        return $this->belongsToMany('App\Models\Model\user\category','category_posts');
+        return $this->belongsToMany('App\Models\Model\user\category','category_posts')->withTimestamps();
     } 
 }
