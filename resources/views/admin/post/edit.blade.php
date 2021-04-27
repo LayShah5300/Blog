@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="{{asset('admin/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css')}}">
   <!-- Select2 -->
   <link rel="stylesheet" href="{{asset('admin/plugins/select2/css/select2.min.css')}}">
-  <link rel="stylesheet" href="{{asset('admin/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css')}}')}}">
+  <link rel="stylesheet" href="{{asset('admin/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css')}}">
   <!-- Bootstrap4 Duallistbox -->
   <link rel="stylesheet" href="{{asset('admin/plugins/bootstrap4-duallistbox/bootstrap-duallistbox.min.css')}}">
   <!-- BS Stepper -->
@@ -135,7 +135,7 @@
                   </select>
                 </div>
                 
-                 <div class="card card-outline card-info">
+                 <div class="card card-outline card-info" style="min-width : max-content;">
             <div class="card-header">
               <h3 class="card-title">
                 Write Post Body here
@@ -143,7 +143,7 @@
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-              <textarea id="body" name="body" >
+              <textarea id="bodyform" name="body" style="min-width : max-content;">
                 {{$post->body}}
               </textarea>
             </div>
@@ -182,22 +182,19 @@
 <!-- InputMask -->
 <script src="{{asset('admin/plugins/moment/moment.min.js')}}"></script>
 <script src="{{asset('admin/plugins/inputmask/jquery.inputmask.min.js')}}"></script>
-<!-- date-range-picker -->
-<script src="{{asset('admin/plugins/daterangepicker/daterangepicker.js')}}"></script>
-<!-- bootstrap color picker -->
-<script src="{{asset('admin/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js')}}"></script>
+
 <!-- Tempusdominus Bootstrap 4 -->
-<script src="{{asset('admin/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js')}}')}}"></script>
+<script src="{{asset('admin/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js')}}"></script>
 <!-- Bootstrap Switch -->
 <script src="{{asset('admin/plugins/bootstrap-switch/js/bootstrap-switch.min.js')}}"></script>
-<!-- BS-Stepper -->
-<script src="{{asset('admin/plugins/bs-stepper/js/bs-stepper.min.js')}}"></script>
-<!-- dropzonejs -->
-<script src="{{asset('admin/plugins/dropzone/min/dropzone.min.js')}}"></script>
 <!-- AdminLTE App -->
 <script src="{{asset('admin/dist/js/adminlte.min.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('admin/dist/js/demo.js')}}"></script>
+<script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
+ <script>
+                        CKEDITOR.replace( 'bodyform' );
+                </script>
 <!-- Page specific script -->
 <script>
   $(function () {

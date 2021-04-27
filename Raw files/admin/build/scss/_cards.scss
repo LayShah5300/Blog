@@ -12,6 +12,7 @@
 }
 
 .card {
+  min-width: max-content!important;
   @include box-shadow($card-shadow);
   margin-bottom: map-get($spacers, 3);
 

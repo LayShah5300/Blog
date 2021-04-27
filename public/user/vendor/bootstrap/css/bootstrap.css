@@ -4721,7 +4721,7 @@ input[type="button"].btn-block {
   display: flex;
   -ms-flex-direction: column;
   flex-direction: column;
-  min-width: 0;
+  min-width: max-content !important;
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
@@ -4760,6 +4760,7 @@ input[type="button"].btn-block {
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
   min-height: 1px;
+  min-width: max-content !important;
   padding: 1.25rem;
 }
 
