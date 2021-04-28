@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers\user;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Model\user\post;
+use App\Http\Controllers\Controller;
 
 class PostControllerUser extends Controller
 {
-     public function __invoke()
+     public function post(post $post)
     {
-        return view('user.post');
+        
+        return view('user.post',compact('post'));
     }
 }

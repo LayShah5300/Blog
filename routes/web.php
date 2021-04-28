@@ -42,7 +42,8 @@ use App\Http\Controllers\user\PostControllerUser;
 
 
 Route::get('/', [HomeController::class,'__invoke']);
-Route::get('/post', [PostControllerUser::class,'__invoke']);
+
+Route::get('/post/{post?}', [PostControllerUser::class,'post'])->name('post');;
 
 Route::resource('admin/user',UserControllerAdmin::class);
 Route::resource('admin/post',PostController::class);

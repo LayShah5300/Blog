@@ -90,10 +90,14 @@
                   </tr>
                   </tfoot>
                 </table>
+                <div class="fa-pull-right">
+                {!! $posts->links('pagination::bootstrap-4') !!}
+              </div>
               </div>
               <!-- /.card-body -->
             </div>
             <!-- /.card -->
+              }
         </div>
         <!-- /.card-body -->
         <div class="card-footer">
