@@ -191,6 +191,7 @@
 <script src="{{asset('admin/dist/js/adminlte.min.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('admin/dist/js/demo.js')}}"></script>
+<script src="{{asset('admin/ckeditor/ckeditor.js')}}"></script>
 <script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
  <script>
                         CKEDITOR.replace( 'bodyform' );

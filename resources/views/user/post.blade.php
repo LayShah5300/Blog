@@ -2,6 +2,9 @@
 
 @section('bg-img',asset('user/img/post-bg.jpg'))
 @section('title',$post->title)
+ @section('head')
+ <link href="{{asset('user/css/prism.css')}}" rel="stylesheet" type="text/css">
+ @endsection
 @section('sub-heading',$post->subtitle)
 
 
@@ -37,8 +40,11 @@
             @endforeach
            
         </div>
-        <br><br><br><br><br><br><br><br><br><br><br>
-        <div class="fa-pull-right" style="margin-left: 350px;">
+        <br><br><br><br><br>
+        
+        <div class="fa-pull-right" style="margin-left: 300px;">
+          <br><br>
+          <hr>
 <div class="fb-comments fa-pull-right" data-href="{{ Request::url() }}" data-width="" data-numposts="5"></div>
     </div>
   </div>
@@ -47,4 +53,7 @@
   </article>
 
   <hr>
+@endsection
+@section('footer')
+<script src="{{asset('user/js/prism.js')}}"></script>
 @endsection

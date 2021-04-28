@@ -151,6 +151,7 @@
   @endsection
     @section('footer-for-edit')
   <!-- jQuery -->
+  <script src="{{asset('admin/ckeditor/ckeditor.js')}}"></script>
   <script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
    <script>
                         CKEDITOR.replace( 'bodyform' );
