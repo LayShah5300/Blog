@@ -42,7 +42,7 @@
       <div class="card">
         <div class="card-header">
           <h3 class="card-title">Posts</h3>
-          <a class="col-lg-9" href="{{route('post.create')}}">Add New</a>
+          <a class="col-lg-9 " href="{{route('post.create')}}">Add New</a>
           <div class="card-tools">
             <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
               <i class="fas fa-minus"></i>
@@ -77,13 +77,13 @@
                         <td>{{$post->subtitle}} </td>
                         <td>{{$post->slug}}</td>
                         <td>{{$post->created_at}}</td>
-                        <td><a href="{{route('post.edit',$post->id)}}">Edit</a></td>
+                        <td><a class="edit btn btn-primary btn-sm" href="{{route('post.edit',$post->id)}}">Edit</a></td>
                         <td>
-                         <form id="delete-form-{{$post->id}}"style="display:none" method="post"action="{{ route('post.destroy',$post->id)}}"> 
+                         <form  id="delete-form-{{$post->id}}"style="display:none" method="post"action="{{ route('post.destroy',$post->id)}}"> 
                         @csrf  
                         {{method_field('DELETE')}}
                         </form>
-                          <a href=""  onclick="if(confirm('Are you Sure?'))
+                          <a href="" class="delete btn btn-danger btn-sm"  onclick="if(confirm('Are you Sure?'))
                           { 
                             event.preventDefault();
                             document.getElementById('delete-form-{{$post->id}}').submit();
@@ -111,9 +111,9 @@
                   </tr>
                   </tfoot>
                 </table>
-                <div class="fa-pull-right">
+                {{-- <div class="fa-pull-right">
                 {!! $posts->links('pagination::bootstrap-4') !!}
-              </div>  
+              </div>   --}}
               </div>
               <!-- /.card-body -->
             </div>
@@ -143,6 +143,7 @@
 <!-- Bootstrap 4 -->
 <script src="{{asset('admin/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <!-- DataTables  & Plugins -->
+<script src="{{asset('admin/plugins/datatables/jquery.dataTables.js')}}"></script>
 <script src="{{asset('admin/plugins/datatables/jquery.dataTables.min.js')}}"></script>
 <script src="{{asset('admin/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
 <script src="{{asset('admin/plugins/datatables-responsive/js/dataTables.responsive.min.js')}}"></script>
@@ -161,21 +162,24 @@
 <script src="{{asset('admin/dist/js/demo.js')}}"></script>
 <!-- Page specific script -->
 <script>
-  $(function () {
-    $("#example1").DataTable({
-      "responsive": true, "lengthChange": false, "autoWidth": false,
-      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"],
-      "paging": false,globalSearch:true
-    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-    $('#example2').DataTable({
-      "paging": false,
-      "lengthChange": false,
-      "searching": false,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false,
-      "responsive": true,
-    });
-  });
+  $(document).ready(function() {
+    $('#example1').DataTable();
+} );
+  // $(function () {
+  //   $("#example1").DataTable({
+  //     "responsive": true, "lengthChange": false, "autoWidth": false,
+  //     "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"],
+  //     "paging": false,"globalSearch":true
+  //   }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+  //   $('#example2').DataTable({
+  //     "paging": false,
+  //     "lengthChange": false,
+  //     "searching": false,
+  //     "ordering": true,
+  //     "info": true,
+  //     "autoWidth": false,
+  //     "responsive": true,
+  //   });
+  // });
 </script>
 @endsection

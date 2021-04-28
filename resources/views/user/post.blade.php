@@ -7,6 +7,9 @@
 
 @section('main-content')
 <!-- Post Content -->
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v10.0" nonce="t146UQfh">
+</script>
   <article>
     <div class="container">
       <div class="row">
@@ -34,9 +37,13 @@
             @endforeach
            
         </div>
-      </div>
-
+        <br><br><br><br><br><br><br><br><br><br><br>
+        <div class="fa-pull-right" style="margin-left: 350px;">
+<div class="fb-comments fa-pull-right" data-href="{{ Request::url() }}" data-width="" data-numposts="5"></div>
     </div>
+  </div>
+      </div>
+      
   </article>
 
   <hr>
