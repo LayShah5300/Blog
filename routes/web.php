@@ -43,13 +43,16 @@ use App\Http\Controllers\user\PostControllerUser;
 
 Route::get('/', [HomeController::class,'__invoke']);
 
-Route::get('/post/{post?}', [PostControllerUser::class,'post'])->name('post');;
+Route::get('/post/{post?}', [PostControllerUser::class,'post'])->name('post');
 
 Route::resource('admin/user',UserControllerAdmin::class);
 Route::resource('admin/post',PostController::class);
 Route::resource('admin/tag',TagController::class);
 Route::resource('admin/category',CategoryController::class);
 Route::get('admin/home', [HomeControllerAdmin::class, 'index'])->name('admin.home');
+
+Route::get('post/tag/{tag}', [HomeController::class,'tag'])->name('tag');
+Route::get('/post/category/{category}', [HomeController::class,'category'])->name('category');
 
 
 

@@ -20,11 +20,12 @@
           <small>Created {{$post->created_at->diffForHumans()}}</small>
           
            @foreach ($post->categories as $category)
-            
+             <a href="{{ route('category', $category->slug) }}">
             <small class="fa-pull-right" style="margin-right: 20px;">
-                    {{$category->name}}
+                    {{$category->name}} 
             </small>    
-            
+            </a>
+                    
             @endforeach
             {!!$post->body !!}
 
@@ -32,11 +33,11 @@
             <h1>Tags</h1>
             <br>
             @foreach ($post->tags as $tag)
-            
+             <a href="{{ route('tag', $tag->slug) }}">
             <small style="margin-right: 20px; border: 1px solid gray; padding:5px; border-radius:5px;">
-                    {{$tag->name}}
+                   {{$tag->name}}
             </small>    
-            
+            </a>
             @endforeach
            
         </div>

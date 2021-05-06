@@ -10,6 +10,10 @@ class tag extends Model
     use HasFactory;
     public function posts()
     {
-        return $this->belongsToMany('App\Models\Model\user\post','post_tags');
+        return $this->belongsToMany('App\Models\Model\user\post','post_tags')->orderBy('created_at','DESC')->paginate(3);
+    }
+
+    public function getRouteKeyName(){
+        return 'slug';
     }
 }

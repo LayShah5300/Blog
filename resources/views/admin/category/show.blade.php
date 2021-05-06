@@ -91,7 +91,7 @@
                   </tfoot>
                 </table>
                 <div class="fa-pull-right">
-                {!! $posts->links('pagination::bootstrap-4') !!}
+                
               </div>
               </div>
               <!-- /.card-body -->
