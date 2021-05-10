@@ -60,7 +60,7 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="{{route('post.update',$post->id)}}" method="post" >
+              <form action="{{route('post.update',$post->id)}}" method="post" enctype="multipart/form-data">
                 @csrf
                 {{method_field('PUT')}}
                 <div class="card-body">

@@ -1,13 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\TagController;
+use App\Http\Controllers\user\HomeController;
+use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\user\PostControllerUser;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\HomeControllerAdmin;
 use App\Http\Controllers\Admin\UserControllerAdmin;
-use App\Http\Controllers\user\HomeController;
-use App\Http\Controllers\user\PostControllerUser;
 
 
 /*
@@ -59,3 +59,7 @@ Route::get('/post/category/{category}', [HomeController::class,'category'])->nam
 
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

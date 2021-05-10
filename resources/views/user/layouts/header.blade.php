@@ -15,10 +15,33 @@
             <a class="nav-link" href="about.html">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="post.html">Sample Post</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link" href="{{route('register')}}">Register</a>
+          </li>
+        
+          <li class="nav-item">
+              @if (Auth::guest())
+                    <a class="nav-link" href="{{route('login')}}">Login</a>
+              @else
+              <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }}
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+              @endif
+            
           </li>
         </ul>
       </div>

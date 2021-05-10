@@ -50,15 +50,21 @@ class PostController extends Controller
             'subtitle'=>'required',
             'slug'=>'required',
             'body'=>'required',
+            'image' =>' required',
         ]);
 
+         if($request->hasFile('image'))
+            {
+                $imageName = $request->image->store('public');
+            }
+       
         $post = new post;
         $post->title = $request->title;
         $post->subtitle = $request->subtitle;
         $post->slug = $request->slug;
         $post->status = $request->status;
         $post->body = $request->body;
-
+        $post->image = $imageName;
         
         $post->save();
          $post->tags()->sync($request->tags);
@@ -110,13 +116,19 @@ class PostController extends Controller
             'subtitle'=>'required',
             'slug'=>'required',
             'body'=>'required',
+            'image' =>' required',
         ]);
-
+         if($request->hasFile('image'))
+            {
+                $imageName = $request->image->store('public');
+            }
+        
         $post = post::find($id);
         $post->title = $request->title;
         $post->subtitle = $request->subtitle;
         $post->slug = $request->slug;
         $post->status = $request->status;
+        $post->image = $imageName;
         $post->body = $request->body;
             
         $post->tags()->sync($request->tags);
