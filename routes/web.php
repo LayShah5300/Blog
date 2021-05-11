@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\user\HomeController;
 use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\Admin\Auth\LoginController;
 use App\Http\Controllers\user\PostControllerUser;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\HomeControllerAdmin;
@@ -51,12 +52,12 @@ Route::resource('admin/tag',TagController::class);
 Route::resource('admin/category',CategoryController::class);
 Route::get('admin/home', [HomeControllerAdmin::class, 'index'])->name('admin.home');
 
+//Admin auth route
+Route::get('admin-login', [App\Http\Controllers\Admin\Auth\LoginController::class, 'showLoginForm'])->name('admin.login');
+Route::post('admin-login', [App\Http\Controllers\Admin\Auth\LoginController::class, 'login']);
+
 Route::get('post/tag/{tag}', [HomeController::class,'tag'])->name('tag');
 Route::get('/post/category/{category}', [HomeController::class,'category'])->name('category');
-
-
-
-
 
 
 
